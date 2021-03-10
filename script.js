@@ -181,7 +181,7 @@ const game = {
 	
 	randomWord() {
 		let wordList = this.wordList();
-		let random = Math.floor(Math.random(0,wordList.length));
+		let random = Math.floor(Math.random() * wordList.length);
 		return wordList[random];
 	},
 	
