@@ -2,12 +2,12 @@ console.log('Start');
 
 const game = {
 	word: 'corazon',
-	lang: 'es',
+	lang: '',
 
 	init() {
 		console.info('Init.');
 		if( ! this.lang ) {
-			this.lang = 'en';
+			this.lang = 'all';
 		}
 		this.word = prompt("Enter a word", "");
 		this.word = this.word.trim();
@@ -72,11 +72,12 @@ const game = {
 		for (var i = start; i <= last; ++i) {
 			alphabets.push(String.fromCharCode(i));
 		}
-		if( this.lang == 'fi' ) {
+		if( this.lang == 'fi' || this.lang == 'all' ) {
 			alphabets.push('Å');
 			alphabets.push('Ä');
 			alphabets.push('Ö');
-		} else if( this.lang == 'es' ) {
+		}
+		if( this.lang == 'es' || this.lang == 'all' ) {
 			alphabets.push('Ñ');
 		}
 		return alphabets;
