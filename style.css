@@ -1,0 +1,144 @@
+:root {
+	--bg: #eee;
+	--text: #444;
+}
+
+body {
+	background: var(--bg);
+	color: var(--text);
+	font-family: -apple-system, system-ui, sans-serif;
+}
+
+button {
+	background: none;
+	border: none;
+	border-radius: .25em;
+	font-size: 100%;
+	padding: .4em .7em;
+}
+
+button:disabled {
+	text-decoration: line-through;
+}
+
+button:hover {
+	background: rgba(0,0,0,.05);
+}
+
+.letters,
+.mask {
+	list-style: none;
+	margin: 1em 0;
+	padding: 0;
+}
+
+.letters li {
+	display: inline-block;
+	font-size: 1.25em;
+	margin: 0 .1em;
+}
+
+.letters button {
+	font-weight: 500;
+	width: 2.25em;
+}
+
+.mask {
+	align-items: flex-end;
+	display: flex;
+	flex-wrap: wrap;
+	text-align: center;
+}
+
+.mask li {
+	border-bottom: .15em solid;
+	display: inline-block;
+	font-size: 1.5em;
+	font-weight: bold;
+	margin: 0 .2em;
+	min-height: 1.25em;
+	padding: .1em 0 0;
+	width: 1.75em;
+}
+
+@media (min-width:40em) {
+	.mask li {
+		font-size: 3em;
+	}
+}
+
+.death-screen,
+.win-screen {
+	animation: slowin 3s ease 1 forwards;
+	background: rgba(0,0,0,.5);
+	-webkit-backdrop-filter: blur(10px);
+	bottom: 0;
+	color: white;
+	left: 0;
+	padding: 10%;
+	position: fixed;
+	right: 0;
+	text-align: center;
+	top: 0;
+}
+
+.win-screen {
+	background: rgba(255,255,255,.5);
+	border-radius: 2em;
+	color: inherit;
+	margin: auto;
+	max-height: 15em;
+	max-width: 18em;
+}
+
+@keyframes slowin {
+	from {
+		opacity: .01;
+	}
+	to {
+		opacity: .99;
+	}
+}
+
+.screen h1 {
+	animation: swing 2s ease infinite;
+	font-size: 6em;
+	margin: .25em 0;
+	transform-origin: center bottom;
+}
+
+@keyframes swing {
+	0% {
+		transform: rotate(0deg);
+	}
+	25% {
+		transform: rotate(25deg);
+	}
+	50% {
+		transform: rotate(0deg);
+	}
+	75% {
+		transform: rotate(-25deg);
+	}
+	100% {
+		transform: rotate(0deg);
+	}
+}
+
+.screen button {
+	border: .15em solid;
+	font-size: 1.5em;
+	padding: .5em 1.2em;
+}
+
+.viz {
+	background: #ddd;
+	height: auto;
+	min-height: 4em;
+	width: 100%;
+}
+
+.viz .progress > * {
+	opacity: 0;
+	transition: opacity .3s ease;
+}
