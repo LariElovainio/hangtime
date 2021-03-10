@@ -12,7 +12,7 @@ const game = {
 		this.word = prompt("Enter a word", "");
 		this.word = this.word.trim();
 		if( ! this.word ) {
-			this.word = 'kana';
+			this.word = this.randomWord();
 		}
 		this.vizStep = 0;
 		this.death = 16;
@@ -177,7 +177,30 @@ const game = {
 		}.bind(this));
 		winScreen.appendChild(reset);
 		document.body.appendChild(winScreen);
-		
+	},
+	
+	randomWord() {
+		let wordList = this.wordList();
+		let random = Math.floor(Math.random(0,wordList.length));
+		return wordList[random];
+	},
+	
+	wordList() {
+		let list = [
+			'koira',
+			'kissa',
+			'omena',
+			'manzana',
+			'gato',
+			'perro',
+			'corazon',
+			'sydän',
+			'apina',
+			'sukset',
+			'laskettelu',
+			'koti',	
+		];
+		return list;
 	}
 }
 game.init();
