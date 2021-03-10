@@ -1,4 +1,5 @@
 {
-  "workspace.name" : "Hanger",
+  "workspace.color" : 5,
+  "workspace.name" : "Hangtime",
   "workspace.preview_server_allow_external" : true
 }
