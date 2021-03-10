@@ -10,6 +10,7 @@ const game = {
 			this.lang = 'en';
 		}
 		this.word = prompt("Enter a word", "");
+		this.word = this.word.trim();
 		if( ! this.word ) {
 			this.word = 'kana';
 		}
@@ -37,9 +38,14 @@ const game = {
 		masker.classList.add('mask');
 		for( var i=0; i<word.length; i++ ) {
 			let letter = document.createElement('li');
+			console.log(word[i]);
+			if( word[i] == ' ' ) {
+				letter.classList.add('space');
+			}
 			masker.appendChild(letter);
 		}
 		this.masker = masker;
+		this.fullScore = word.split(' ').join('').length;
 		this.board.appendChild(masker);
 	},
 
@@ -100,7 +106,7 @@ const game = {
 					this.masker.children[posses[i]].textContent = letter;
 					this.score++;
 				}
-				if( this.score == this.word.length ) {
+				if( this.score == this.fullScore ) {
 					this.win();
 				}
 			} else {

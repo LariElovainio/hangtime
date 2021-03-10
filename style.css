@@ -61,6 +61,11 @@ button:hover {
 	width: 1.75em;
 }
 
+.mask .space {
+	border-color: transparent;
+	width: .2em;
+}
+
 @media (min-width:40em) {
 	.mask li {
 		font-size: 3em;
