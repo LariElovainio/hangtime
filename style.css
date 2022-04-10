@@ -141,6 +141,16 @@ button:hover {
 	}
 }
 
+.screen {
+	font-size: 3vw;
+}
+
+@media (min-width:40em) {
+	.screen {
+		font-size: 1.2em;
+	}
+}
+
 .death-screen,
 .win-screen {
 	animation: slowin 3s ease 1 forwards;
