@@ -160,7 +160,14 @@ const game = {
 		let progress = this.viz.getElementsByClassName('progress')[0];
 		progress.children[this.vizStep-1].setAttribute('style','opacity:1');
 	},
-	
+
+	addWord(element) {
+		let word = document.createElement('div');
+		word.classList.add('word-repeat');
+		word.textContent = this.word;
+		element.appendChild(word);
+	},
+
 	die() {
 		document.body.classList.add('death');
 		let deathScreen = document.createElement('div');
@@ -169,6 +176,7 @@ const game = {
 		let heading = document.createElement('h1');
 		heading.textContent = '☠';
 		deathScreen.appendChild(heading);
+		this.addWord(deathScreen);
 		let reset = document.createElement('button');
 		reset.textContent = 'New Game';
 		reset.type = 'button';
@@ -179,7 +187,7 @@ const game = {
 		deathScreen.appendChild(reset);
 		document.body.appendChild(deathScreen);
 	},
-	
+
 	win() {
 		document.body.classList.add('win');
 		let winScreen = document.createElement('div');
@@ -188,6 +196,7 @@ const game = {
 		let heading = document.createElement('h1');
 		heading.textContent = '✌︎';
 		winScreen.appendChild(heading);
+		this.addWord(winScreen);
 		let reset = document.createElement('button');
 		reset.textContent = 'New Game';
 		reset.type = 'button';
