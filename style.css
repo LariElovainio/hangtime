@@ -1,6 +1,7 @@
 :root {
 	--bg: #eee;
 	--text: #444;
+	--header-height: 3em;
 }
 
 html,
@@ -15,8 +16,7 @@ body {
 	display: flex;
 	flex-direction: column;
 	font-family: -apple-system, system-ui, sans-serif;
-	overflow: auto;
-	overflow-x: hidden;
+	overflow: hidden;
 	padding: .5em;
 }
 
@@ -24,6 +24,8 @@ article {
 	flex: 1 1 auto;
 	display: flex;
 	flex-direction: column;
+	margin-top: var(--header-height);
+	overflow: auto;
 	overflow-x: hidden;
 }
 
@@ -36,12 +38,25 @@ article section {
 	flex: 1 1 suto;
 }
 
-body > h1 {
+header {
+	align-items: center;
+	background: #0ff5bb;
+	box-shadow: 0 .125em .25em #42937e55;
+	display: flex;
+	height: var(--header-height);
+	justify-content: center;
+	left: 0;
+	margin: -.5em -.5em .5em;
+	position: fixed;
+	right: 0;
+	top: 0;
+}
+
+header h1 {
 	flex: 0;
-	font-size: 3vw;
-	letter-spacing: 11.25vw;
-	margin: 0 0 .5em;
-	text-transform: uppercase;
+	font-size: 1.125em;
+	margin: 0;
+	text-align: center;
 }
 
 button {
@@ -84,7 +99,16 @@ button:hover {
 }
 
 .toolbar {
+	display: flex;
+	font-size: 1.5em;
+	justify-content: space-between;
+	left: 0;
+	line-height: .7;
 	margin: auto 0 0;
+	position: absolute;
+	right: 0;
+	top: 0;
+	z-index: 2;
 }
 
 .mask {

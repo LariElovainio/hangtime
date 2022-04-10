@@ -29,6 +29,7 @@ const game = {
 		let game = document.getElementsByTagName('article')[0];
 		game.appendChild(board);
 		this.game = game;
+		this.header = document.getElementsByTagName('header')[0];
 		this.board = board;
 		this.mask();
 		this.letters = this.setLetters();
@@ -48,7 +49,7 @@ const game = {
 			this.init('custom');
 		}.bind(this));
 		toolBar.appendChild(customGame);
-		this.board.appendChild(toolBar);
+		this.header.appendChild(toolBar);
 		this.toolBar = toolBar;
 	},
 
