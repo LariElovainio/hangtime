@@ -102,7 +102,7 @@ const game = {
 		}
 		return alphabets;
 	},
-	
+
 	letterClick(e) {
 		let t = e.target;
 		let word = this.word;
@@ -135,7 +135,7 @@ const game = {
 			}
 		}
 	},
-	
+
 	vizInit() {
 		let viz = document.getElementsByTagName('svg')[0];
 		let prog = viz.getElementsByClassName('progress')[0];
@@ -146,12 +146,12 @@ const game = {
 		this.death = progLength;
 		this.viz = viz;
 	},
-	
+
 	visualize() {
 		this.vizStep++;
 		if( this.vizStep < this.death ) {
 			this.game.setAttribute('data-step',this.vizStep);
-			
+
 		} else {
 			window.setTimeout( function() {
 				this.die();
@@ -207,27 +207,38 @@ const game = {
 		winScreen.appendChild(reset);
 		document.body.appendChild(winScreen);
 	},
-	
+
 	randomWord() {
 		let wordList = this.wordList();
 		let random = Math.floor(Math.random() * wordList.length);
 		return wordList[random];
 	},
-	
+
 	wordList() {
 		let list = [
 			'koira',
 			'kissa',
 			'omena',
-			'manzana',
-			'gato',
-			'perro',
-			'corazon',
 			'sydän',
 			'apina',
 			'sukset',
 			'laskettelu',
-			'koti',	
+			'koti',
+			'krokotiili',
+			'alligaattori',
+			'leijona',
+			'taiteilija',
+			'kirahvi',
+			'seepra',
+			'matto',
+			'televisio',
+			'kerrostalo',
+			'pallo',
+			'manzana',
+			'gato',
+			'perro',
+			'corazon',
+			'naranja',
 		];
 		return list;
 	}
