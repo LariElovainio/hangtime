@@ -1,16 +1,21 @@
 console.log('Start');
 
 const game = {
-	word: 'corazon',
+	word: '',
 	lang: '',
 
-	init() {
+	init(gameType) {
 		console.info('Init.');
 		if( ! this.lang ) {
 			this.lang = 'all';
 		}
-		this.word = prompt("Enter a word", "");
-		this.word = this.word.trim();
+		if( gameType == 'custom' ) {
+			this.word = prompt("Enter a word", "");
+			this.word = this.word.trim();
+			this.gameType = gameType;
+		} else {
+			this.gameType = 'random';
+		}
 		if( ! this.word ) {
 			this.word = this.randomWord();
 		}
@@ -29,7 +34,22 @@ const game = {
 		this.letters = this.setLetters();
 		this.populateLetters();
 		this.vizInit();
+		this.initToolBar();
 		this.score = 0;
+	},
+
+	initToolBar() {
+		let toolBar = document.createElement('div');
+		toolBar.classList.add('toolbar');
+		let customGame = document.createElement('button');
+		customGame.type = 'button';
+		customGame.textContent = '✍︎';
+		customGame.addEventListener('click', function() {
+			this.init('custom');
+		}.bind(this));
+		toolBar.appendChild(customGame);
+		this.board.appendChild(toolBar);
+		this.toolBar = toolBar;
 	},
 
 	mask() {
@@ -203,4 +223,4 @@ const game = {
 		return list;
 	}
 }
-game.init();
+game.init('random');
