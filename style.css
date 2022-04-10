@@ -3,10 +3,45 @@
 	--text: #444;
 }
 
+html,
+body {
+	margin: 0;
+	padding: 0;
+}
+
 body {
 	background: var(--bg);
 	color: var(--text);
+	display: flex;
+	flex-direction: column;
 	font-family: -apple-system, system-ui, sans-serif;
+	overflow: auto;
+	overflow-x: hidden;
+	padding: .5em;
+}
+
+article {
+	flex: 1 1 auto;
+	display: flex;
+	flex-direction: column;
+	overflow-x: hidden;
+}
+
+.viz {
+	flex: 3 3 auto;
+	min-height:
+}
+
+article section {
+	flex: 1 1 suto;
+}
+
+h1 {
+	flex: 0;
+	font-size: 3vw;
+	letter-spacing: 11.25vw;
+	margin: .5em;
+	text-transform: uppercase;
 }
 
 button {
@@ -43,10 +78,15 @@ button:hover {
 	width: 2.25em;
 }
 
+.toolbar {
+	margin: auto 0 0;
+}
+
 .mask {
 	align-items: flex-end;
 	display: flex;
 	flex-wrap: wrap;
+	justify-content: center;
 	text-align: center;
 }
 
@@ -96,6 +136,15 @@ button:hover {
 	max-width: 18em;
 }
 
+.word-repeat {
+	font-size: 1.5em;
+	font-weight: 600;
+	letter-spacing: .1em;
+	margin: 1em auto;
+	text-align: center;
+	text-transform: uppercase;
+}
+
 @keyframes slowin {
 	from {
 		opacity: .01;
@@ -108,7 +157,7 @@ button:hover {
 .screen h1 {
 	animation: swing 2s ease infinite;
 	font-size: 6em;
-	margin: .25em 0;
+	margin: 0;
 	transform-origin: center bottom;
 }
 
@@ -139,7 +188,7 @@ button:hover {
 .viz {
 	background: #ddd;
 	height: auto;
-	max-height: 20em;
+	max-height: 15em;
 	min-height: 4em;
 	width: auto;
 }
