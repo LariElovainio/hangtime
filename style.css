@@ -36,11 +36,11 @@ article section {
 	flex: 1 1 suto;
 }
 
-h1 {
+body > h1 {
 	flex: 0;
 	font-size: 3vw;
 	letter-spacing: 11.25vw;
-	margin: .5em;
+	margin: 0 0 .5em;
 	text-transform: uppercase;
 }
 
