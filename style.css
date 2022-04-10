@@ -67,6 +67,10 @@ button:hover {
 	padding: 0;
 }
 
+.letters {
+	text-align: center;
+}
+
 .letters li {
 	display: inline-block;
 	font-size: 1.25em;
@@ -188,14 +192,14 @@ button:hover {
 .viz {
 	background: #ddd;
 	height: auto;
-	max-height: 15em;
+	max-height: 35vh;
 	min-height: 4em;
 	width: auto;
 }
 
 @media (min-height:40em) {
 	.viz {
-		max-height: 50%;
+		max-height: 50vh;
 	}
 }
 
